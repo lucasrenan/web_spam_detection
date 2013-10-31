@@ -11,7 +11,7 @@ function Z = reduzirAtributos(x)
 
 
 % Normalizar os valores de X
-[X_norm, media, desvio] = normalizarAtributos(x);
+[X_norm] = normalizarAtributos(x);
 
 % Diminuir a quantidade de atributos usando PCA
 [U, S] = pca(X_norm);

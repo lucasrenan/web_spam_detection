@@ -1,5 +1,5 @@
-function g = sigmoid(z)
-% Função sigmoid
+function g = rl_sigmoid(z)
+% Função rl_sigmoid
 % 	Calcula a funcao sigmoidal
 %
 % Entrada:

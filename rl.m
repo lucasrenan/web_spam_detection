@@ -25,16 +25,19 @@ X = [ones(m, 1) X];
 theta_inicial = zeros(n + 1, 1);
 
 %  Calcular o custo inicial e o gradiente
-[custo, grad] = funcaoCusto(theta_inicial, X, y);
+[custo, grad] = rl_funcaoCusto(theta_inicial, X, y);
 
 %  Encontrar o theta otimo
 [theta, custo] = ...
-	fminunc(@(t)(funcaoCusto(t, X, y)), theta_inicial);
+	fminunc(@(t)(rl_funcaoCusto(t, X, y)), theta_inicial);
 
 %  Calcula a acuracia do modelo sobre a base de treinamento.
-p = predicaoRL(theta, X);
+Y = rl_predicao(theta, X);
 
-fprintf('Acuracia na base de treinamento: %f\n', mean(double(p == y)) * 100);
+%Acuracia do algoritmo
+ac = (sum(Y == y)/size(y,1)) * 100;
+fprintf('Acuracia: %f\n', ac);
+
 
 %% Finalizacao
 clear; close all;

@@ -1,5 +1,5 @@
-function [J, grad] = funcaoCusto(theta, X, y)
-% Função funcaoCusto:
+function [J, grad] = rl_funcaoCusto(theta, X, y)
+% Função rl_funcaoCusto:
 % 	Calcular o custo de usar theta para ajustar X
 %
 % Entrada:
@@ -18,7 +18,7 @@ J = 0; % Custo
 grad = zeros(size(theta)); % gradiente
 
 % Calcular a sigmoidal
-sig = sigmoid( X * theta);
+sig = rl_sigmoid( X * theta);
 
 %Calcular o custo
 J = sum( ( -y .* log( sig ) ) - (( 1 .- y) .* log( 1 .- sig ) )  ) / m;

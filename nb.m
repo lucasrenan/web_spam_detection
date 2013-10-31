@@ -9,27 +9,28 @@ data = load('base.txt');
 x = data(:, 1:end-1 ); 
 Y = data(:, end );
 
-%  Antes de aplicar o PCA, normalize os valores de X
+%  Normalizar os valores de X
 [X_norm] = normalizarAtributos(x);
 
+
+%acho que ficou melhor sem reduzir os dados com pca
 %  Executa o PCA
-[U, S] = pca(X_norm);
+%[U, S] = pca(X_norm);
 
 %Calcular o K 
-for K = 1:size(S,1)
-	pos = sum(diag(S(:,1:K)) ) / sum(diag(S));
-	if (pos >= 0.99)
-		break;
-	end
-end
+%for K = 1:size(S,1)
+%	pos = sum(diag(S(:,1:K)) ) / sum(diag(S));
+%	if (pos >= 0.99)
+%		break;
+%	end
+%end
 
-%K = 50;
-Z = projetarDados(X_norm, U, K);
+%K = 137;
+%Z = projetarDados(X_norm, U, K);
 
-%Padronizar nome de variavel
-X = Z;
+% Colocar a matriz normalizada em escala entre ranges
+X = nb_escalarAtributos(X_norm);
 
-X = x;
 %Descobrir os elementos unicos na matriz
 uniq = unique(X);
 
@@ -50,10 +51,13 @@ atribX0 = X(index_0,:);%atributos que sao da classe 0
 atribX1 = X(index_1,:);%atributos que sao da classe 1
 
 %Calcular a probabilidade dos elementos.
-% ARRUMAR FUNCAO ABAIXO, POIS ESSE ESQUEMA DE UNIQ TA RETORNANDO MTO GRANDE POR SER NUMEROS CONTINUOS.
-% TEM QUE PENSAR EM OUTRO JEITO
 [prob0, prob1] = nb_calcProbabilidade(tam_X,uniq,atribX0,atribX1);
 
-fprintf('Prob calculada.\n\n');
+%Classificar os atributos
+[y] = nb_classificarAtributos(X,uniq, prob0, prob1, p0, p1);
 
-% codig 2 aqui
+%Acuracia do algoritmo
+ac = (sum(Y == y)/tam_Y) * 100;
+fprintf('Acuracia: %f\n', ac);
+
+

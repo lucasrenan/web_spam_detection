@@ -1,5 +1,5 @@
-function p = predicaoRL(theta, X)
-% Função predicaoRL
+function p = rl_predicao(theta, X)
+% Função rl_predicao
 % 	Classifica se a amostra é da classe 1 ou 0
 %
 % Entrada:
@@ -15,7 +15,7 @@ m = size(X, 1); % Tamanho das amostras de X
 p = zeros(m, 1);
 
 % Calcular a sigmoidal
-sig = sigmoid( X * theta );
+sig = rl_sigmoid( X * theta );
 
 % Classificar as amostras
 for i=1:m 
