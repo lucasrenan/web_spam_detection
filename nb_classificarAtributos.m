@@ -23,12 +23,6 @@ for k = 1:size(X,1)%linhas
 	tot_1 = 1;
 	for j = 1: size(X,2)%colunas
 		index = find(X(k,j) == uniq); %Encontrar o indice onde ocorre o atributo
-		if (prob0(index,j) == 0) % aplicar suavizacao nos casos que sao 0
-		   prob0(index,j) = 1/size( unique( X(:,j) ),1);
-		end
-		if (prob1(index,j) == 0) % aplicar suavizacao nos casos que sao 0
-		   prob1(index,j) = 1/size( unique( X(:,j) ),1);
-		end
 		tot_0 = tot_0 * prob0(index,j); %Armazenar os valores de prob do atributo na classe 0
 		tot_1 = tot_1 * prob1(index,j); %Armazenar os valores de prob do atributo na classe 1
 	end

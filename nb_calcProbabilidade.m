@@ -1,12 +1,11 @@
-function [prob0, prob1] = nb_calcProbabilidade(tam_X,uniq,atribX0,atribX1)
+function [prob0, prob1] = nb_calcProbabilidade(uniq,Y,X)
 % Função nb_calcProbabilidade:
 % 	Calcula a probabilidade de ocorrencia dos atributos na classe 0 e classe 1
 %
 % Entrada:
-%  tam_X   = Função que recebe tamanho dos atributos X
-%  uniq    = Vetor de elementos unicos da base de teste
-%  atribX0 = Atributos das amostras que são da classe 0
-%  atribX1 = Atributos das amostras que são da classe 1
+%  uniq    = Vetor com elementos unicos da base de teste
+%  Y       = Matriz de classes das amostras
+%  X       = Matriz de amostras
 %
 % Saída:
 %  prob0 = Matriz de probabilidade dos atributos para a classe 0
@@ -16,6 +15,16 @@ function [prob0, prob1] = nb_calcProbabilidade(tam_X,uniq,atribX0,atribX1)
 %Inicializar variaveis de controle
 prob_0 = [];
 prob_1 = [];
+
+tam_X = size(X,2);
+
+%Salvar os index onde acontece cada classe
+index_0 = find(Y == 0);
+index_1 = find(Y == 1);
+
+%Separar os atributos das amostras de acordo com a classe
+atribX0 = X(index_0,:);%atributos que sao da classe 0
+atribX1 = X(index_1,:);%atributos que sao da classe 1
 
 %Calcular o tamanho das matrizes separadas.
 tam_0 = size(atribX0,1);

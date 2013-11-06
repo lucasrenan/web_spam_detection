@@ -1,8 +1,6 @@
 %% Inicializacao
 clear ; close all; clc
 
-fprintf('Por favor aguarde. Estamos carregando os dados...\n\n');
-
 % Carrega os dados do arquivo
 data = load('base.txt');
 
@@ -16,9 +14,8 @@ Z = reduzirAtributos(x);
 %Padronizar o nome da variavel
 X = Z;
 
-%  Adicionar 1 na primeira coluna
+% Adicionar 1 na primeira coluna
 [m, n] = size(X);
-
 X = [ones(m, 1) X];
 
 %  Inicializar os parametros que serao ajustados
@@ -38,6 +35,4 @@ Y = rl_predicao(theta, X);
 ac = (sum(Y == y)/size(y,1)) * 100;
 fprintf('Acuracia: %f\n', ac);
 
-
-%% Finalizacao
-clear; close all;
+% Calcular a Predicao, Revocacao, e F-Medida
