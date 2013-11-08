@@ -31,6 +31,17 @@ p0 = (tam_Y - sum(Y))/tam_Y; % prob classe 0
 ac = (sum(Y == y)/tam_Y) * 100;
 fprintf('Acuracia: %f\n', ac);
 
-% Calcular a Predicao, Revocacao, e F-Medida
+% Encontra os valores de TP, FP e FN para calculos
+[TP, FP, FN] = valoresTblConfusao(Y, y);
 
+%precisao 
+pcs = (TP/(TP+FP)) * 100;
+fprintf('Precisao: %f\n', pcs);
 
+%revocacao
+rev = (TP/(TP+FN)) * 100;
+fprintf('Revocacao: %f\n', rev);
+
+%f-medida
+fmed = 2 * (rev*pcs)/(rev+pcs);
+fprintf('F-Medida: %f\n', fmed);
