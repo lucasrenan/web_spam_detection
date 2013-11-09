@@ -14,7 +14,7 @@ function g = rl_sigmoid(z)
 g = zeros(size(z));
 
 % Calcular sigmoidal
-g = 1 ./ ( 1 +  e.^(-z)  );
+g = 1 ./ ( 1 +  exp(-z)  );
 
 % =============================================================
 

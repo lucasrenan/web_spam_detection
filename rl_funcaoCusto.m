@@ -21,10 +21,10 @@ grad = zeros(size(theta)); % gradiente
 sig = rl_sigmoid( X * theta);
 
 %Calcular o custo
-J = sum( ( -y .* log( sig ) ) - (( 1 .- y) .* log( 1 .- sig ) )  ) / m;
+J = sum( ( -y .* log( sig ) ) - (( 1 - y) .* log( 1 - sig ) )  ) / m;
 
 % Calcular o gradiente
-grad =  ( X.' *( sig.- y ) )./ m;
+grad =  ( X.' *( sig - y ) )./ m;
 
 % ============================================================
 
