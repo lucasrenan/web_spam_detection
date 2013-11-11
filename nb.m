@@ -8,7 +8,9 @@ x = data(:, 1:end-1 );
 Y = data(:, end );
 
 % Colocar a matriz em escala entre ranges
-X = nb_escalarAtributos(x,10);
+% Retornar a matriz escalada e o range utilizado
+range = 0;
+[X,range] = nb_escalarAtributos(x,5, range);
 
 %Descobrir os elementos unicos na matriz
 uniq = unique(X);

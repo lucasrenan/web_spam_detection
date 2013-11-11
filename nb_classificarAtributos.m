@@ -23,8 +23,10 @@ for k = 1:size(X,1)%linhas
 	tot_1 = 1;
 	for j = 1: size(X,2)%colunas
 		index = find(X(k,j) == uniq); %Encontrar o indice onde ocorre o atributo
-		tot_0 = tot_0 * prob0(index,j); %Armazenar os valores de prob do atributo na classe 0
-		tot_1 = tot_1 * prob1(index,j); %Armazenar os valores de prob do atributo na classe 1
+		if ( !isempty(index) )
+			tot_0 = tot_0 * prob0(index,j); %Armazenar os valores de prob do atributo na classe 0
+			tot_1 = tot_1 * prob1(index,j); %Armazenar os valores de prob do atributo na classe 1
+		end
 	end
 	% Multiplicar pela probabilidade das classes.
 	px0 = (tot_0) * p0;

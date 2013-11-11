@@ -21,6 +21,7 @@ X = [ones(m, 1) X];
 
 %  Inicializar os parametros que serao ajustados
 theta_inicial = zeros(n + 1, 1);
+size(theta_inicial)
 
 %  Calcular o custo inicial e o gradiente
 [custo, grad] = rl_funcaoCusto(theta_inicial, X, y);
@@ -28,6 +29,7 @@ theta_inicial = zeros(n + 1, 1);
 %  Encontrar o theta otimo
 [theta, custo] = ...
 	fminunc(@(t)(rl_funcaoCusto(t, X, y)), theta_inicial);
+size(theta)
 
 %  Calcula a acuracia do modelo sobre a base de treinamento.
 Y = rl_predicao(theta, X);

@@ -1,4 +1,4 @@
-function [X] = nb_escalarAtributos(Z, qtdeBag)
+function [X, range] = nb_escalarAtributos(Z, qtdeBag, range)
 % Função nb_escalarAtributos
 %   Escala os atributos distintos em uma escala
 %
@@ -11,7 +11,9 @@ function [X] = nb_escalarAtributos(Z, qtdeBag)
 % ============================================================
 
 %Definir a escala dos atributos.
-range = iqr(Z);
+if (range == 0)
+    range = iqr(Z);
+end
 
 for i = 1:size(Z,1) %linhas
     for n = 1:size(Z,2) %Colunas

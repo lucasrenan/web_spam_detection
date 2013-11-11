@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.31)  9 NOV 2013 22:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.31)  12 NOV 2013 21:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -364,6 +364,40 @@ LaTeX Warning: Citation `6' on page 1 undefined on input line 63.
 
 
 ]
+
+LaTeX Warning: Citation `7' on page 2 undefined on input line 66.
+
+
+LaTeX Warning: Citation `8' on page 2 undefined on input line 72.
+
+
+LaTeX Warning: Citation `9' on page 2 undefined on input line 75.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 76.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 76.
+
+Underfull \hbox (badness 4024) in paragraph at lines 75--77
+[]\OT1/ptm/m/n/10 Ao tes-tar o al-go-ritmo im-ple-men-tado de re-gress[]ao
+ []
+
+
+LaTeX Warning: Citation `10' on page 2 undefined on input line 80.
+
+
+LaTeX Warning: Reference `table_comparacao' on page 2 undefined on input line 8
+3.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 88.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 88.
+
+Overfull \hbox (16.08156pt too wide) in paragraph at lines 88--98
+ [][] 
+ []
+
 No file relatorio.bbl.
 
 ** Conference Paper **
@@ -376,30 +410,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2
-
-] (./relatorio.aux)
+[2] (./relatorio.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 1539 strings out of 494536
- 23275 string characters out of 6167445
+ 1573 strings out of 494536
+ 23642 string characters out of 6167445
  89273 words of memory out of 5000000
- 4828 multiletter control sequences out of 15000+600000
- 33584 words of font info for 63 fonts, out of 8000000 for 9000
+ 4854 multiletter control sequences out of 15000+600000
+ 38209 words of font info for 72 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 26i,8n,23p,808b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 26i,12n,23p,808b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
-cal/texlive/2013basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
-exlive/2013basic/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texli
-ve/2013basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
-13basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (2 pages, 56494 bytes).
+cal/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/local/texlive/2013basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/
+local/texlive/2013basic/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/loca
+l/texlive/2013basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/tex
+live/2013basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (2 pages, 79532 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 36 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
