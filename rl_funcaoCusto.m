@@ -12,19 +12,25 @@ function [J, grad] = rl_funcaoCusto(theta, X, y)
 %  grad = Gradiente
 % ============================================================
 
-% Initializa variaveis
 m = length(y); % numero de exemplos de treinamento
-J = 0; % Custo
-grad = zeros(size(theta)); % gradiente
 
-% Calcular a sigmoidal
+% Voce precisa retornar as seguintes variaveis corretamente
+J = 0;
+grad = zeros(size(theta));
+% Initializa variaveis
+lambda = 0.8;
 sig = rl_sigmoid( X * theta);
 
-%Calcular o custo
-J = sum( ( -y .* log( sig ) ) - (( 1 - y) .* log( 1 - sig ) )  ) / m;
+theta_2 = theta;
+theta_2(1) = 0;
 
-% Calcular o gradiente
-grad =  ( X.' *( sig - y ) )./ m;
+reg_c = (lambda  * sum(  theta(2:size(theta)) .^2 ) )/ (2 * m);
+J = (sum( ( -y .* log( sig ) ) - (( 1 .- y) .* log( 1 .- sig ) )  ) / m ) + reg_c ;
+
+reg = (theta_2 * lambda) / m;
+gra = ( X.' *( sig.- y ) )./ m;
+grad = gra + reg;
+
 
 % ============================================================
 
