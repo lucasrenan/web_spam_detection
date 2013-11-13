@@ -33,8 +33,8 @@ theta_2 = 1 + (-1-1).*rand(tam_cam_inter + 1, tam_cam_saida);
 %theta_2 = rand(tam_cam_inter + 1, 2); 
 
 J = 0;
-Theta1_grad = zeros(size(theta_1));
-Theta2_grad = zeros(size(theta_2));
+%Theta1_grad = zeros(size(theta_1));
+%Theta2_grad = zeros(size(theta_2));
 
 %X_1 = X * theta_1;
 
@@ -65,25 +65,10 @@ a3 = sigmoid(z3);
 %J = -sum(sum(custo,2)) / m;
 
 %reg = sum(sum(theta_1(:,2:end).^2)) + sum(sum(theta_2(: , 2:end).^2));
-<<<<<<< HEAD
+
 
 %J = J + lambda/(2*m)*reg;
 
-% Voce precisa retornar as seguintes variaveis corretamente
-J = 0;
-% Initializa variaveis
-lambda = 1;
-
-y = Y;
-
-theta_3 = theta_2;
-theta_3(1) = 0;
-reg_c = (lambda  * sum(  theta_2(2:size(theta_2)) .^2 ) )/ (2 * m);
-J = (sum( -y.*(log( a3 ) ) - (( 1 - y) .* log( 1 - a3 ))) / m )  ;
-
-=======
-
-%J = J + lambda/(2*m)*reg;
 
 % Voce precisa retornar as seguintes variaveis corretamente
 J = 0;
@@ -95,21 +80,20 @@ y = Y;
 reg_c = (lambda  * sum(  theta_2(2:size(theta_2)) .^2 ) )/ (2 * m);
 J = (sum( -y.*(log( a3 ) ) - (( 1 .- y) .* log( 1 .- a3 ) )  ) / m )  ;
 
->>>>>>> 5ab1253d6869b593d8cd0195858f7806bb14182b
 J
 
 %
 
 %backpropagation
 
-<<<<<<< HEAD
 d3 = a3 - Y;
 d2 = (d3*theta_2').* (a2.* (1-a2));%sigmoidGradiente(z2);
 
 %deltao1 = a1 * delta2;
 deltha2 = a2' * d3;
-=======
-G1 = zeros(size(theta_1));
+
+#{
+ G1 = zeros(size(theta_1));
 G2 = zeros(size(theta_2));
 for i = 1 : m,
         ra1 = X(i,:)';
@@ -126,7 +110,7 @@ for i = 1 : m,
        G1 = G1 + err2 * ra1';
        G2 = G2 + err3 * ra2';
 end
-
+#}
 
 
 %delta_3 = zeros(num_cam, 1);
@@ -142,7 +126,7 @@ end
 
 %Delta1 = delta2'*a1;
 %Delta2 = delta3'*a2;
->>>>>>> 9a0303316fa7bb69a49b188f411f71c6221c5f7c
+
 
 %Delta1 = delta2'*a1;
 %Delta2 = delta3'*a2;
