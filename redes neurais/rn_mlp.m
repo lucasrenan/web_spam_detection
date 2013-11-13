@@ -61,9 +61,6 @@ a2 = [ones(m , 1)  a2];
 z3 = a2 * theta_2;
 a3 = sigmoid(z3);
 
-ident = eye(num_cam);%(Y,:);
-%ident = eye(num_labels);
-
 %custo = ident.*log(a3) + (1 - ident).*log(1 - a3);
 %J = -sum(sum(custo,2)) / m;
 
@@ -78,8 +75,6 @@ lambda = 1;
 
 y = Y;
 
-theta_3 = theta_2;
-theta_3(1) = 0;
 reg_c = (lambda  * sum(  theta_2(2:size(theta_2)) .^2 ) )/ (2 * m);
 J = (sum( -y.*(log( a3 ) ) - (( 1 .- y) .* log( 1 .- a3 ) )  ) / m )  ;
 
@@ -89,18 +84,54 @@ J
 
 %backpropagation
 
-delta3 = a3 - ident;
-delta2 = (delta3*theta_2)(:,2:end) .* sigmoidGradiente(z2);
+d3 = a3 - Y;
+d2 = (d3*theta_2').* (a2.* (1-a2));%sigmoidGradiente(z2);
 
-Delta1 = delta2'*a1;
-Delta2 = delta3'*a2;
+%deltao1 = a1 * delta2;
+deltha2 = a2' * d3;
 
-Theta1_grad = Delta1 / m + lambda*[zeros(hidden_layer_size , 1) theta_1(:,2:end)] / m;
-Theta2_grad = Delta2 / m + lambda*[zeros(num_labels , 1) theta_2(:,2:end)] / m;
+%Delta1 = delta2'*a1;
+%Delta2 = delta3'*a2;
+theta_c_1 = theta_1;
+theta_c_2 = theta_2;
+theta_c_2(1) = 0;
+theta_c_1(1) = 0;
+
+%Delta1 = (deltao1/m) + (lambda * theta_c_1);
+Delta = (deltha2/m) + (lambda * theta_c_2);	
+
+delta_unico = Delta;
+delta_unico = delta_unico';
+delta_unico = delta_unico(:);
+
+%Theta1_grad = Delta1 / m + lambda*[zeros(hidden_layer_size , 1) theta_1(:,2:end)] / m;
+%Theta2_grad = Delta2 / m + lambda*[zeros(num_labels , 1) theta_2(:,2:end)] / m;
 
 %
+opcoes = optimset('GradObj', 'on');
+[theta, custo] = ...
+	fminunc(@(t)(JDeltha(J,delta_unico)), theta_1);
+custo 
 
-res = [Theta1_grad(:), Theta2_grad(:)];
+%classificar
+
+m = size(X, 1); % Tamanho das amostras de X
+p = zeros(m, 1);
+
+% Calcular a sigmoidal
+sig = sigmoid( X * theta );
+
+% Classificar as amostras
+for i=1:m 
+	if ( sig(i)  >= 0.5)
+		p(i) = 1;
+	else
+		p(i) = 0;
+	end
+end;
+ac = (sum(Y == p)/size(Y,1)) * 100;
+fprintf('Acuracia: %f\n', ac);
+%res = [Theta1_grad(:), Theta2_grad(:)];
 
 %% Finalizacao
 %clear; close all;
