@@ -29,7 +29,6 @@ size(theta_inicial)
 %  Encontrar o theta otimo
 [theta, custo] = ...
 	fminunc(@(t)(rl_funcaoCusto(t, X, y)), theta_inicial);
-size(theta)
 
 %  Calcula a acuracia do modelo sobre a base de treinamento.
 Y = rl_predicao(theta, X);
