@@ -33,7 +33,8 @@ fflush(stdout);
 theta_inicial = zeros(n + 1, 1);
 
 %  Encontrar o theta otimo
-[theta, custo] = fminunc(@(t)(rl_funcaoCusto(t, X, y)), theta_inicial);
+op = optimset('GradObj', 'on');
+[theta, custo] = fminunc(@(t)(rl_funcaoCusto(t, X, y)), theta_inicial, op);
 
 %------------------- Classificar as amostras ---------------------------
 disp('Classificar as amostras.');
