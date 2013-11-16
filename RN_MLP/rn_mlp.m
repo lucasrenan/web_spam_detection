@@ -12,7 +12,7 @@ fflush(stdout);
 
 % Carrega os dados da base
 data = load('base.txt');
-X = data(:, 1:end-1 ); 
+X = data(:, 1:end-1 );
 Y = data(:, end );
 
 %------------------- Inicializar variaveis -----------------------------
@@ -22,10 +22,10 @@ X = normalizarAtributos(X);
 [m, n] = size(X);
 
 %% Inicializar Parâmetros
-tam_cam_entrada  = n;  % quantidade de neuronios na camada de entrada 
+tam_cam_entrada  = n;  % quantidade de neuronios na camada de entrada
 tam_cam_inter    = 20; % quantidade de neuronios na camada intermediaria
 tam_cam_saida    = 1;  % quantidade de neuronios na camada de saida
- 
+
 %Carregar thetas predefinidos para a base de dados
 disp('Carregar os thetas pre-definidos. Caso deseje, descomente o código para ser gerado randomico.');
 fflush(stdout);
@@ -78,6 +78,5 @@ rev = (TP/(TP+FN)) * 100;
 fprintf('Revocacao: %f\n', rev);
 
 %f-medida
-fmed = 2 * (rev*pcs)/(rev+pcs);  
+fmed = 2 * (rev*pcs)/(rev+pcs);
 fprintf('F-Medida: %f\n', fmed);
-

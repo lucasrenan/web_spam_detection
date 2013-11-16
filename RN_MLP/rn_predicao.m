@@ -21,19 +21,18 @@ a2 = sigmoid(a1 * theta_1);
 a2 = [ones(m , 1)  a2];
 a3 = sigmoid(a2 * theta_2);
 
-m = size(a3, 1); 
+m = size(a3, 1);
 p = zeros(m, 1);
 
 sig = a3;
 %Classificar as amostras
-for i=1:m 
+for i=1:m
   if ( sig(i)  >= media)
     p(i) = 1;
   else
     p(i) = 0;
   end
 end;
-
 
 %============================================================
 end
