@@ -1,0 +1,77 @@
+## 100%
+
+Acuracia: 79.221436
+Precisao: 79.726997
+Revocacao: 78.928929
+F-Medida: 79.325956
+
+
+part 1 -> x(1:396, :) - x(397:end, :)
+
+Acuracia: 80.808081
+Precisao: 79.802956
+Revocacao: 82.233503
+F-Medida: 81.000000
+
+part 2 -> x(397:792, :) - [x(1:396,:) ; x(793:end,:)]
+
+Acuracia: 77.777778
+Precisao: 80.952381
+Revocacao: 74.634146
+F-Medida: 77.664975
+
+part 3 -> x(793:1188, :) - [x(1:792,:) ; x(1189:end,:)]
+
+Acuracia: 78.787879
+Precisao: 82.474227
+Revocacao: 76.190476
+F-Medida: 79.207921
+
+part 4 -> x(1189:1584, :) - [x(1:1188,:) ; x(1585:end,:)]
+
+Acuracia: 78.030303
+Precisao: 79.702970
+Revocacao: 77.777778
+F-Medida: 78.728606
+
+part 5 -> x(1585:1980, :) - [x(1:1584,:) ; x(1981:end,:)]
+
+Acuracia: 77.272727
+Precisao: 74.129353
+Revocacao: 79.679144
+F-Medida: 76.804124
+
+part 6 -> x(1981:2375, :) - [x(1:1980,:) ; x(2376:end,:)]
+
+Acuracia: 80.506329
+Precisao: 80.748663
+Revocacao: 78.645833
+F-Medida: 79.683377
+
+part 7 -> x(2376:2770, :) - [x(1:2375,:) ; x(2771:end,:)]
+
+Acuracia: 82.025316
+Precisao: 82.673267
+Revocacao: 82.266010
+F-Medida: 82.469136
+
+part 8 -> x(2771:3165, :) - [x(1:2770,:) ; x(3166:end,:)]
+
+Acuracia: 76.202532
+Precisao: 78.403756
+Revocacao: 77.674419
+F-Medida: 78.037383
+
+part 9 -> x(3166:3560, :) - [x(1: 3165,:) ; x(3561:end,:)]
+
+Acuracia: 77.468354
+Precisao: 77.386935
+Revocacao: 77.777778
+F-Medida: 77.581864
+
+part 10 -> x(3561:end,:) - x(1:3560,:)
+
+Acuracia: 81.313131
+Precisao: 77.659574
+Revocacao: 82.022472
+F-Medida: 79.781421
