@@ -27,9 +27,13 @@ tam_cam_inter    = 20; % quantidade de neuronios na camada intermediaria
 tam_cam_saida    = 1;  % quantidade de neuronios na camada de saida
  
 %Carregar thetas predefinidos para a base de dados
+disp('Carregar os thetas pre-definidos. Caso deseje, descomente o código para ser gerado randomico.');
+fflush(stdout);
 theta_inicial = load('theta_ini');
 
 %Caso deseje, os thetas podem ser carregados de forma randomica, descomente  o código abaixo
+%disp('Gerando thetas randômicos.');
+%fflush(stdout);
 %theta_1 = 0.1*(1-2*rand(tam_cam_entrada+1,tam_cam_inter));
 %theta_2 = 0.1*(1-2*rand(tam_cam_inter+1,tam_cam_saida));
 %theta_inicial = [theta_1(:) ; theta_2(:)];
