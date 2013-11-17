@@ -1,21 +1,21 @@
 function g = sigmoid(z)
-%SIGMOID Calcula a funcao sigmoidal
-%   G = SIGMOID(z) calcula a sigmoid de z.
+% Função sigmoid
+% 	Calcula a funcao sigmoidal
+%
+% Entrada:
+%  z  = Valores a ser calculados
+%
+% Saída:
+%  g = Valor da sigmoidal
+% ============================================================
 
-% Voce precisa retornar a seguinte variavel corretamente
+
+% Inicializar variaveis
 g = zeros(size(z));
 
-% ====================== ESCREVA O SEU CODIGO AQUI ======================
-% Instrucoes: Calcule a sigmoid de cada valor de z (z pode ser uma matriz,
-%               vetor ou escalar).
+% Calcular sigmoidal
+g = 1 ./ ( 1 +  exp(-z)  );
 
-
-
- g = 1./( 1 + exp(-z));
-
-
-
-
-% =======================================================================
+% =============================================================
 
 end
