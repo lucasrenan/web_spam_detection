@@ -34,7 +34,7 @@ a3 = sigmoid(a2 * theta_2);
 reg_c = (lambda  * sum( theta_1(2:end) .^2 ) )/ (2 * m);
 reg_c = reg_c + (lambda  * sum( theta_2(2:end) .^2 ) )/ (2 * m);
 
-b = (( 1 .- y) .* log( 1 .- a3 ) );
+b = (( 1 - y) .* log( 1 - a3 ) );
 J = sum(sum( -y.*(log( a3 ) ) - b ) / m ) + reg_c ;
 
 %================= Back Propagation

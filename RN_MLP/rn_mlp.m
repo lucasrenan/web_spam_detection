@@ -8,7 +8,7 @@
 clear ; close all; clc;
 
 disp('Carregando os dados... Aguarde.');
-fflush(stdout);
+%fflush(stdout);
 
 % Carrega os dados da base
 data = load('base.txt');
@@ -28,7 +28,7 @@ tam_cam_saida    = 1;  % quantidade de neuronios na camada de saida
 
 %Carregar thetas predefinidos para a base de dados
 disp('Carregar os thetas pre-definidos. Caso deseje, descomente o código para ser gerado randomico.');
-fflush(stdout);
+%fflush(stdout);
 theta_inicial = load('theta_ini');
 
 %Caso deseje, os thetas podem ser carregados de forma randomica, descomente  o código abaixo
@@ -41,17 +41,16 @@ theta_inicial = load('theta_ini');
 
 %------------------- Calcular o theta otimo ------------------------------
 disp('Calcular o theta ótimo.');
-fflush(stdout);
+%fflush(stdout);
 %Encontrar o theta otimo
-op = optimset('GradObj', 'on');
-[theta, custo] = ...
+op = optimset('GradObj', 'on', 'LargeScale', 'off');
+[theta, custo, exit_flag] = ...
   fminunc(@(t)(rn_JDeltha(t,X, Y, tam_cam_entrada, tam_cam_inter,tam_cam_saida)), theta_inicial, op);
-
 
 %------------------- Classificar as amostras -----------------------------
 
 disp('Classificar as amostras.');
-fflush(stdout);
+%fflush(stdout);
 %Separar os thetas das camadas
 theta_1 = reshape( theta(1:tam_cam_inter * (tam_cam_entrada + 1)), (tam_cam_entrada + 1), tam_cam_inter );
 theta_2 = reshape( theta((1 + (tam_cam_inter * (tam_cam_entrada + 1))):end), (tam_cam_inter + 1) , tam_cam_saida);
@@ -61,7 +60,7 @@ p = rn_predicao(theta_1, theta_2, X);
 
 %------------------- Exibir resultados ---------------------------------
 fprintf('Resultados Obtidos com as Redes Neurais Artificiais - MultiLayer Perceptron:\n');
-fflush(stdout);
+%fflush(stdout);
 %Acuracia do algoritmo
 ac = (sum(Y == p)/size(p,1)) * 100;
 fprintf('Acuracia: %f\n', ac);
