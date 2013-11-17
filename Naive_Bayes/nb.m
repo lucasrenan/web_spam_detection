@@ -14,7 +14,7 @@ clear ; close all; clc;
 
 % Carrega os dados do arquivo
 disp('Carregando os dados... Aguarde.');
-fflush(stdout);
+%fflush(stdout);
 data = load('base.txt');
 
 % Separa os atribuos na matriz X, e Y
@@ -22,7 +22,7 @@ x = data(:, 1:end-1 );
 Y = data(:, end );
 
 disp('Calculando as probabilidades.');
-fflush(stdout);
+%fflush(stdout);
 
 %--------------- Escalar a matriz com dados continuos ----------------------
 % Colocar a matriz em escala entre ranges
@@ -47,13 +47,13 @@ p0 = (tam_Y - sum(Y))/tam_Y; % prob classe 0
 
 %------------------- Classificar as amostras -------------------------------
 disp('Classificar as amostras.');
-fflush(stdout);
+%fflush(stdout);
 %Classificar os atributos
 [y] = nb_classificarAtributos(X,uniq, prob0, prob1, p0, p1);
 
 %------------------- Exibir Resultados -------------------------------------
 fprintf('Resultados Obtidos com o Naive Bayes:\n');
-fflush(stdout);
+%fflush(stdout);
 
 %Acuracia do algoritmo
 ac = (sum(Y == y)/tam_Y) * 100;

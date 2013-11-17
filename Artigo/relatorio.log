@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.31)  17 NOV 2013 12:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.17)  17 NOV 2013 14:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **relatorio.tex
 (./relatorio.tex
 LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 21 languages loaded.
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -17,7 +17,7 @@ Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
 
-(/usr/local/texlive/2013basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -90,19 +90,19 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
-) (/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/inputenc.sty
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/t1enc.dfu
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -252,7 +252,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/ot1enc.dfu
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -283,7 +283,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/omsenc.dfu
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -307,24 +307,24 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2013basic/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2013/05/16 v3.9f The Babel package
 
-(/usr/local/texlive/2013basic/texmf-dist/tex/generic/babel-portuges/portuges.ld
-f
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
- (/usr/local/texlive/2013basic/texmf-dist/tex/generic/babel/babel.def
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/05/16 v3.9f Babel common definitions
 \babel@savecnt=\count91
 \U@D=\dimen117
 )
 Package babel Info: Making " an active character on input line 145.
 )
-(/usr/local/texlive/2013basic/texmf-dist/tex/generic/babel-portuges/portuges.ld
-f
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 \l@brazil = a dialect from \language\l@portuges 
-)) (./relatorio.aux)
+))
+(./relatorio.aux)
 \openout1 = `relatorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -341,7 +341,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
- [1{/usr/local/texlive/2013basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+ [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -395,22 +395,21 @@ Before submitting the final camera ready copy, remember to:
 
 ] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 1593 strings out of 494536
- 23931 string characters out of 6167445
- 92273 words of memory out of 5000000
- 4872 multiletter control sequences out of 15000+600000
+ 1593 strings out of 493315
+ 23821 string characters out of 6137903
+ 95286 words of memory out of 5000000
+ 5075 multiletter control sequences out of 15000+600000
  38238 words of font info for 72 fonts, out of 8000000 for 9000
- 319 hyphenation exceptions out of 8191
+ 957 hyphenation exceptions out of 8191
  26i,12n,23p,811b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013basic/texmf-dist/fonts/enc/dvips/b
-ase/8r.enc}</usr/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/urw/time
-s/utmb8a.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/urw/times/utm
-bi8a.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/urw/times/utmr8a.
-pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-
-Output written on relatorio.pdf (4 pages, 91607 bytes).
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (4 pages, 91613 bytes).
 PDF statistics:
  42 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream
