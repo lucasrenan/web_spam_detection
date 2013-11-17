@@ -5,19 +5,19 @@
 
 \begin{document}
 
-\title{Título do artigo}
+\title{Análise de Métodos para Classificação de Web Spam}
 
 \author{
 \IEEEauthorblockN{Alan S. Castro}
 \IEEEauthorblockA{Universidade Federal de São Carlos\\
 UFSCar\\
 Sorocaba, Brasil\\
-email@gmail.com}\\
+alan.silva@gmail.com}\\
 \IEEEauthorblockN{Lucas Renan A. Nunes}
 \IEEEauthorblockA{Universidade Federal de São Carlos\\
 UFSCar\\
 Sorocaba, Brasil\\
-email@gmail.com}
+contato@lucasrenan.com}
 \and
 \IEEEauthorblockN{Cássia C. Monteiro}
 \IEEEauthorblockA{Universidade Federal de São Carlos\\
@@ -36,51 +36,55 @@ The abstract goes here. DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR 
 
 \end{abstract}
 
+\section{Resumo}
+Com o crescimento da internet e a utilização de sites de buscas surgiram sites mal intencionados denominados Web Spam, os quais utilizam  técnicas fraudulentas para enganar o search engine dos sites de buscas para obter uma posição elevada nos resultados apresentados ao usuário, degradando, assim, os resultados apresentados e frustando os usuários quanto ao conteúdo exibido.
+Com esse problema em mente, o objetivo deste trabalho é comparar o desempenho de três métodos de aprendizado de máquina (naive bayes, regressão logística e redes neurais artificiais), fazendo testes e comparações entre eles para encontrar aquele que apresenta o melhor resultado na classificação de Web Spam com a base de dados utilizada.
+
 \begin{IEEEkeywords}
-web spam; classificador; comparação de métodos
+web spam; classificador; comparação de métodos; regressão logística; naive bayes; redes neurais artificiais;
 \end{IEEEkeywords}
 
 \section{Introdução} 
-Com a internet, é comum usarmos sites de busca para encontrarmos resultados como páginas, arquivos, imagens, músicas ou etc . Os resultados exibidos são elencados, através de search engines que geram um rank com os melhores resultados de acordo com o conteúdo relevante na página. O search engine começou por volta de 1994, com o World Wide Web Worm, e tinha por volta de 110.000 páginas web associadas. Após essse ano, isso foi crescendo cada vez mais \cite{1}.
-Com o crescimento do uso de sites de busca, surgiu o web spam que segundo \cite{2} é definido pela ação de alterar páginas da internet com a intenção de enganar os search engines, de maneira que o conteúdo inserido para elencar a página no rank, não tenha relação com a página em questão.
-\cite{3}, relata que web spam é um dos maiores problemas dos search engines, porque degrada a qualidade dos resultados oferecidos, onde muitas pessoas ficam frustadas ao acessarem páginas que não tem relação com o termo buscado. Ainda relata que o web spam impacta também na área econômica, pois o retorno financeiro de propagandas são aumentadas de acordo com uma boa colocação no rank de busca.
+Com a internet, é comum usarmos sites de busca para encontrarmos resultados como páginas, arquivos, imagens, músicas, etc . Os resultados exibidos são elencados através de search engines que geram um rank com os melhores resultados de acordo com o conteúdo relevante na página. O search engine começou por volta de 1994, com o World Wide Web Worm, e tinha por volta de 110.000 páginas web associadas. Após essse ano, isso foi crescendo cada vez mais \cite{1}.
+Com o crescimento do uso de sites de busca surgiu o web spam que segundo \cite{2} é definido pela ação de alterar páginas da internet com a intenção de enganar os search engines, de maneira que o conteúdo inserido para elencar a página no rank não tenha relação com a página em questão.
+\cite{3} relata que web spam é um dos maiores problemas dos search engines, porque degrada a qualidade dos resultados oferecidos deixando muitas pessoas frustadas ao acessarem páginas que não tem relação com o termo buscado. Ainda relata que o web spam impacta também na área econômica, pois o retorno financeiro de propagandas aumenta de acordo com uma boa colocação no rank de busca.
 Com o crescimento desse problema, estudos se tornam cada vez mais necessários para detectar se uma página usa de métodos fraudulentos para se beneficiar na posição do rank. Com o uso de técnicas de aprendizado de máquina, podemos classificar as páginas como sendo legítimas ou spam, nesse trabalho comparamos três métodos para classificação de web spam.
-Na sessão \ref{descricao}, é realizada a descrição da base de dados utilizada nesse trabalho, e citados os métodos definidos. A sessão \ref{metodos} contém uma explicação mais detalhada dos métodos utilizados e modelo de comparação entre os algortimos, já as escolhas de parâmetros são relatadas na sessão \ref{metodologia}. Os resultados são apresentados na sessão \ref{resultados}, seguido da conclusão na sessão \ref{conclusao}.
+Na sessão \ref{descricao}, é realizada a descrição da base de dados utilizada nesse trabalho e citados os métodos definidos. A sessão \ref{metodos} contém uma explicação mais detalhada dos métodos utilizados e modelo de comparação entre os algoritmos, já as escolhas de parâmetros são relatadas na sessão \ref{metodologia}. Os resultados são apresentados na sessão \ref{resultados}, seguido da conclusão na sessão \ref{conclusao}.
 
 \section{Descrição do trabalho}\label{descricao} 
-Para esse trabalho foi disponibilizado uma base de dados com 3.596 amostras, ou seja páginas, com 137 atributos além do atributo classe. Os atributos são dados contínuos, e  descrevem características para páginas que são ou não são spam. A base está balanceada tendo metade das amostras classificadas como spam, e a outra metade classificada como não spam.
+Para esse trabalho foi disponibilizado uma base de dados com 3.596 amostras, ou seja, páginas com 137 atributos além do atributo classe. Os atributos são dados contínuos e  descrevem características para páginas que são ou não são spam. A base está balanceada tendo metade das amostras classificadas como spam e a outra metade classificada como não spam.
 De acordo com isso, é proposto a comparação de três métodos de aprendizado de máquina, sendo definido a utilização de Naive Bayes, Regressão Logística e Redes Neurais Artificiais, descritas com detalhe na próxima seção.
 Foi utilizado o software livre Octave para implementação e testes necessários.
 
 \section{Métodos}\label{metodos}
 \subsection{Naive Bayes}
-De acordo com \cite{4}, o classificador bayeseano é uma técnica probabilística baseada no teorema de Thomas Bayes, denominado naive Bayes, onde é considerado um algoritmo "ingênuo", devido assumir que todos os atributos possuem relações independentes entre si, o algoritmo de naive Bayes, pode ser descrito como o produtório das probabilidades de cada atributo pelas classes existentes, onde a amostra é classificada para determinada classe, caso o valor calculado de produtório seja superior ao das outras classes. Comparativos entre algoritmos demonstram que o naive Bayes, obteve resultados compatíveis com os métodos de árvore de decisão e redes neurais. Devido a sua simplicidade e o alto poder preditivo, é um dos algoritmos mais utilizados \cite{5}.
+De acordo com \cite{4}, o classificador bayeseano é uma técnica probabilística baseada no teorema de Thomas Bayes, denominado naive Bayes, o qual é considerado um algoritmo "ingênuo" devido assumir que todos os atributos possuem relações independentes entre si, o algoritmo de naive Bayes pode ser descrito como o produtório das probabilidades de cada atributo pelas classes existentes, sendo que a amostra é classificada para determinada classe, caso o valor calculado de produtório seja superior ao das outras classes. Comparativos entre algoritmos demonstram que o naive Bayes obteve resultados compatíveis com os métodos de árvore de decisão e redes neurais. Devido a sua simplicidade e o alto poder preditivo é um dos algoritmos mais utilizados \cite{5}.
  
 \subsection{Regressão Logística}
-A regressão logística, é um classificador que através da função sigmoidal classifica um grupo de amostras. \cite{6}, retrata que o método é robusto, flexível e de fácil utilização, com o objetivo de encontrar o melhor modelo que descreva os atríbutos em uma determina classe.
+A regressão logística é um classificador que através da função sigmoidal classifica um grupo de amostras. \cite{6}, retrata que o método é robusto, flexível e de fácil utilização, com o objetivo de encontrar o melhor modelo que descreva os atríbutos em uma determina classe.
 
-\subsection{Redes Neurais Artifíciais}
-Redes Neurais Artifíciais é um método que pode ser usado como classificador, foi inicialmente desenvolvido para funcionar como o sistema neural humano, desde então uma grande variedade de modelos de redes foram desenvolvidos, a escolha do modelo da rede depende do problema a ser resolvido, segundo \cite{7} o modelo mais utilizado é o de multilayer perceptrons(MLP), a MLP é constituída de nós fontes que formam a camada de entrada da rede(input layer), uma ou mais camadas intermediárias(hidden layers) e uma camada de saída(output layer). De acordo com \cite{11}, as redes neurais têm sido considerada como uma importante ferramenta de mineração de dados. 
+\subsection{Redes Neurais Artificiais}
+Redes Neurais Artificiais é um método que pode ser usado como classificador, foi inicialmente desenvolvido para funcionar como o sistema neural humano, desde então uma grande variedade de modelos de redes foram desenvolvidos, a escolha do modelo da rede depende do problema a ser resolvido, segundo \cite{7} o modelo mais utilizado é o de multilayer perceptrons(MLP), a MLP é constituída de nós fontes que formam a camada de entrada da rede(input layer), uma ou mais camadas intermediárias(hidden layers) e uma camada de saída(output layer). De acordo com \cite{11}, as redes neurais têm sido considerada como uma importante ferramenta de mineração de dados. 
 
 \section{Metodologia}\label{metodologia}
 Os algoritmos foram criados seguindo os critérios de otimização e eficiência. As escolhas dos paramêtros, dificuldades e soluções são descritas nas sub-sessões abaixo.
 \subsection{Naive Bayes}
-A principal dificuldade para a implementação do naive bayes, foi otimizar o algoritmo para obter resultados satisfatórios. Para uma base de dados com atributos contínuos e grande dispersão de dados, o algoritmo apresentou-se lento para o cálculo de probabilidade dos elementos. 
+A principal dificuldade para a implementação do naive bayes foi otimizar o algoritmo para obter resultados satisfatórios. Para uma base de dados com atributos contínuos e grande dispersão de dados, o algoritmo apresentou-se lento para o cálculo de probabilidade dos elementos. 
 Verificado que o naive bayes não tem um bom resultado com dados contínuos, para resolver esse problema, foi escolhida a solução de cestas, isto é, uma maneira de discretizar os dados contínuos agrupando-os em cestas de equivalência, uma descrição mais detalhada pode ser encontrada em \cite{8}. 
 Para determinar a escala dos atributos foi utilizado o quartil das amostras de treino, sendo utilizado essa mesma escala para as amostras de teste. Após definida a escala, as amostras foram agrupadas em cinco cestas de valores múltiplos com relação a escala, onde o valor cinco foi escolhido através de testes realizados através da análise do comparativo entre desempenho e acurácia obtida.
 \subsection{Regressão Logística}
-Ao testar o algoritmo implementado de regressão logística, foi constatado que com os 137 atributos da base de dados o resultado apresentado foi bom, porém o desempenho computacional foi alto. Para melhorar o desempenho, foi decidido utilizar a técnica de análise de componentes principais (PCA) para reduzir a dimensionalidade de atributos \cite{9}. 
-Com o uso do PCA, foi cálculado o parâmetro $k$ com a matriz de autovalores $S$ retornada da função $SVD$, de modo que a soma dos valores até $k$ calculado sobre o total de atributos, resultasse em uma variância de 99\%. Com a matriz de atributos reduzidos a $k=87$, o  método apresentou melhor desempenho computacional e não teve interferência na acurácia apresentada . 
-\subsection{Redes Neurais Artifíciais}
-Na implementação de Redes Neurais Artifíciais foram encontradas algumas dificuldades para obter um valor de acurácia aceitável para o método, a principal delas foi a atualização dos pesos, denominados nesse trabalho como \textit{theta}, onde após tentativas o \textit{theta} inicial foi parametrizado para ser um valor próximo de zero. 
+Ao testar o algoritmo implementado de regressão logística foi constatado que com os 137 atributos da base de dados o resultado apresentado foi bom, porém o desempenho computacional foi alto. Para melhorar o desempenho, foi decidido utilizar a técnica de análise de componentes principais (PCA) para reduzir a dimensionalidade de atributos \cite{9}. 
+Com o uso do PCA foi cálculado o parâmetro $k$ com a matriz de autovalores $S$ retornada da função $SVD$, de modo que a soma dos valores até $k$ calculado sobre o total de atributos, resultasse em uma variância de 99\%. Com a matriz de atributos reduzidos a $k=87$, o  método apresentou melhor desempenho computacional e não teve interferência na acurácia apresentada . 
+\subsection{Redes Neurais Artificiais}
+Na implementação de Redes Neurais Artificiais foram encontradas algumas dificuldades para obter um valor de acurácia aceitável para o método, a principal delas foi a atualização dos pesos, denominados nesse trabalho como \textit{theta}, onde após tentativas o \textit{theta} inicial foi parametrizado para ser um valor próximo de zero. 
 Além da escolha do \textit{theta} inicial, para obtermos um melhor resultado foi necessário aplicar a normalização dos dados, para que ficassem com média 0 e desvio padrão 1.
-Para obter um bom desempenho computacional, definimos o número de neurônios na camada intermediária utilizando as \textit{rules of thumb}, para saber mais sobre \cite{12}, onde após alguns testes foi definido como sendo 20 neurônios na camada intermediária, obtendo dessa forma a menor taxa de erro, alinhada ao desempenho computacional.
-Com a escolha do \textit{theta} inicial sendo de forma randômica, o resultado de acurácia varia de acordo com essa escolha, para otimizarmos o resultado, foi gerado um arquivo contendo um dos melhores \textit{thetas} apresentado pelos testes, sendo possível classificar novas amostras com o uso desse \textit{theta} pré-definido, ou utilizar o modo randômico, para maiores detalhes de implementação consulte o apêndice.
+Para obter um bom desempenho computacional, definimos o número de neurônios na camada intermediária utilizando as \textit{rules of thumb}, consulte \cite{12}, onde após alguns testes foi definido como sendo 20 neurônios na camada intermediária, obtendo ,dessa forma, a menor taxa de erro alinhada ao desempenho computacional.
+Como o resultado de acurácia varia de acordo com a escolha do \textit{theta} inicial sendo de forma randômica, para otimizarmos o resultado, foi gerado um arquivo contendo um dos melhores \textit{thetas} apresentados pelos testes, sendo possível classificar novas amostras com o uso desse \textit{theta} pré-definido ou utilizar o modo randômico, para maiores detalhes de implementação consulte o apêndice.
 \subsection{Medida de desempenho}
-Para validar os resultados obtidos de todos os algoritmos implementados, utilizamos a validação cruzada, ou \textit{cross-validation} que consiste em separar amostras classificadas da base de dados em $k$ partes, onde após essa separação fazemos $n$ repetições de maneira que cada parte seja utilizada como teste de classificação, e as outras partes sejam utilizados para o treinamento do algoritmo. De acordo com \cite{10}, a escolha de $k$ é geralmente igual a dez.
+Para validar os resultados obtidos de todos os algoritmos implementados utilizamos a validação cruzada ou \textit{cross-validation}, que consiste em separar amostras classificadas da base de dados em $k$ partes, onde após essa separação fazemos $n$ repetições de maneira que cada parte seja utilizada como teste de classificação, e as outras partes sejam utilizadas para o treinamento do algoritmo. De acordo com \cite{10}, a escolha de $k$ é geralmente igual a dez.
 
 \section{Resultados}\label{resultados}
-Para cada método descrito acima foi calculado a acurácia, F-medida, revocação e precisão. Os resultados dos testes são demonstrados na Tabela \ref{table:table_comparacao} de comparação, os resultados em negrito descrevem os melhores resultados encontrados.
+Para cada método descrito acima foi calculado a acurácia, F-medida, revocação e precisão. Os resultados dos testes são demonstrados na Tabela \ref{table:table_comparacao} de comparação, em negrito estão os melhores resultados encontrados.
 \\
 \begin{table}[!htpb]
 \begin{small} 
@@ -89,10 +93,10 @@ Para cada método descrito acima foi calculado a acurácia, F-medida, revocaçã
 \hline
                  & Naive Bayes & Regressão Logística  & Redes Neurais \\
 \hline
-Acurácia    & 80.358948  &90.166835 & 79.221436 \\
-Revocação & 84.731058  & 93.528817 & 78.928929\\
-Precisão    & 74.064712  & 87.636191 & 79.726997\\
-F-Medida   & 79.039655  & 90.486672  & 79.325956\\
+Acurácia    & 80.358948  &\textbf{90.166835} & 79.221436 \\
+Revocação & 84.731058  & \textbf{93.528817} & 78.928929\\
+Precisão    & 74.064712  & \textbf{87.636191} & 79.726997\\
+F-Medida   & 79.039655  & \textbf{90.486672}  & 79.325956\\
 \hline
 \end{tabular}
 \caption{Comparativo entre métodos}
@@ -100,12 +104,12 @@ F-Medida   & 79.039655  & 90.486672  & 79.325956\\
 \end{small}
 \end{table} 
 
-Como é possível analisarmos, o método que teve um resultado melhor foi a regressão logística, tendo 90\% de acurácia. O desempenho computacional dos métodos naive bayes e regressão logística foram equivalentes, levando menos de um minuto para computar os resultados. Já o redes neurais teve um desempenho computacional maior, devido a sua otmização.
+Como é possível analisarmos, o método que teve um resultado melhor foi a regressão logística, tendo 90\% de acurácia. O desempenho computacional dos métodos naive bayes e regressão logística foram equivalentes, levando menos de um minuto para computar os resultados. Já o redes neurais teve um desempenho computacional maior, devido a sua otimização.
 Em termos gerais, os algoritmos obtiveram um bom resultado, ficando a acurácia de todos acima ou próximos de 80\% e a menor F-Medida igual a 79\%.
 
-\section{Conclusion}\label{conclusao}
-Nosso trabalho demonstra de forma clara e objetiva a implementação de três métodos de aprendizado de máquina. Onde com a comparação de resultados de testes verificamos que a simplicidade e eficiência da regressão logística, apresentou um melhor desempenho e maior acurácia para uma base de dados balanceada e com dados contínuos. As validações cruzadas utilizadas confirmam que todos os métodos são eficientes com dados apresentados de maneira distintas.
-Dessa forma, podemos concluir que para a classificação de páginas webspam ou legítimas, pode ser feita através de qualquer um dos três métodos utilizados.
+\section{Conclusão}\label{conclusao}
+Nosso trabalho demonstra de forma clara e objetiva a implementação de três métodos de aprendizado de máquina. Com a comparação dos resultados de testes verificamos que a simplicidade e eficiência da regressão logística apresentou um melhor desempenho e maior acurácia para uma base de dados balanceada e com dados contínuos. As validações cruzadas utilizadas confirmam que todos os métodos são eficientes com dados apresentados de maneira distintas.
+Dessa forma, podemos concluir que a classificação de páginas webspam ou legítimas pode ser feita por meio de qualquer um dos três métodos utilizados nesse trabalho.
 
 
 \bibliographystyle{IEEEtran}
@@ -128,7 +132,7 @@ Nessa sessão apresentamos um descritivo da implementação, para que os testes 
 \begin{enumerate}
 \item A base de dados deve estar na mesma pasta dos arquivos de implementação.
 \item Para rodar o método, chame o arquivo "rl.m".
-\item Para melhor desempenho computacional, usamos a função "reduzirAtributos", que reduz para $k$ amostras, de maneira que a variância seja de 99\%.
+\item Para melhor desempenho computacional usamos a função "reduzirAtributos", que reduz para $k$ amostras, de maneira que a variância seja de 99\%.
 \item Setar o \textit{theta} inicial com uns.
 \item Chamar a função "fminunc" passando a "rl\_funcaoCusto".
 \item Com o \textit{theta} ótimo calculado, chamar a "rl\_predicao" para a nova amostra de dados..
