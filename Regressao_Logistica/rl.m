@@ -9,7 +9,7 @@ clear ; close all; clc
 
 % Carrega os dados do arquivo
 disp('Carregando os dados... Aguarde.');
-fflush(stdout);
+%fflush(stdout);
 data = load('base.txt');
 
 % Separa os atribuos na matriz X, e Y
@@ -19,7 +19,7 @@ y = data(:, size(data,2) );
 %------------------- Reduzir as amostras -----------------------------
 %Reduzir os atributos atavés do uso do PCA
 disp('Reduzir quantidade de amostras com PCA.');
-fflush(stdout);
+%fflush(stdout);
 X = reduzirAtributos(x);
 
 % Adicionar 1 na primeira coluna
@@ -28,7 +28,7 @@ X = [ones(m, 1) X];
 
 %------------------- Calcular o theta otimo ---------------------------
 disp('Calcular o theta ótimo.');
-fflush(stdout);
+%fflush(stdout);
 %  Inicializar os theta(pesos) que serao ajustados
 theta_inicial = zeros(n + 1, 1);
 
@@ -38,13 +38,13 @@ op = optimset('GradObj', 'on');
 
 %------------------- Classificar as amostras ---------------------------
 disp('Classificar as amostras.');
-fflush(stdout);
+%fflush(stdout);
 %  Calcula a acuracia do modelo sobre a base de treinamento.
 Y = rl_predicao(theta, X);
 
 %------------------- Exibir resultados ---------------------------------
 fprintf('Resultados Obtidos com a Regressão Logística:\n');
-fflush(stdout);
+%fflush(stdout);
 %Acuracia do algoritmo
 ac = (sum(Y == y)/size(y,1)) * 100;
 fprintf('Acuracia: %f\n', ac);

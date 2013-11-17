@@ -25,11 +25,11 @@ theta_2(1) = 0;
 
 % Calcular o custo
 reg_c = (lambda  * sum(  theta(2:size(theta)) .^2 ) )/ (2 * m);
-J = (sum( ( -y .* log( sig ) ) - (( 1 .- y) .* log( 1 .- sig ) )  ) / m ) + reg_c ;
+J = (sum( ( -y .* log( sig ) ) - (( 1 - y) .* log( 1 - sig ) )  ) / m ) + reg_c ;
 
 % Calcular o gradiente
 reg = (theta_2 * lambda) / m;
-gra = ( X.' *( sig.- y ) )./ m;
+gra = ( X.' *( sig - y ) )./ m;
 grad = gra + reg;
 
 
