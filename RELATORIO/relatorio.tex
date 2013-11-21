@@ -61,7 +61,7 @@ Com o crescimento do uso de sites de busca surgiu o \textit{web spam} que segund
 
 Com esse problema detectado e em constante crescimento, acaba se tornando viável uma série de  estudos com a intenção de detectar a utilização de métodos fraudulentos por uma página que queira alterar o \textit{ranking} da \textit{search engine}, gerando benefícios para a mesma. Utilizando técnicas de aprendizado de máquina, é possível classificar essas páginas como sendo legítimas ou spam, nesse trabalho serão aplicados três métodos que tem como intuito a classificação de \textit{web spam}.
 
-Na sessão \ref{descricao}, é realizada a descrição da base de dados que foi utilizada nesse trabalho e são citados os métodos definidos. A sessão \ref{metodos} contém uma explicação mais detalhada dos métodos utilizados e modelo de comparação entre os algoritmos, já as escolhas de parâmetros são relatadas na sessão \ref{metodologia}. Os resultados são apresentados na sessão \ref{resultados}, seguido da conclusão na sessão \ref{conclusao}.
+Na seção \ref{descricao}, é realizada a descrição da base de dados que foi utilizada nesse trabalho e são citados os métodos definidos. A seção \ref{metodos} contém uma explicação mais detalhada dos métodos utilizados e modelo de comparação entre os algoritmos, já as escolhas de parâmetros são relatadas na seção \ref{metodologia}. Os resultados são apresentados na seção \ref{resultados}, seguido da conclusão na seção \ref{conclusao}.
 
 \section{Descrição do trabalho}\label{descricao} 
 Para esse trabalho foi disponibilizado uma base de dados com 3.596 amostras, ou seja, páginas com 137 atributos além do atributo classe. Os atributos são dados contínuos e descrevem características para páginas que são ou não são \textit{spam}. A base está balanceada tendo metade das amostras classificadas como \textit{spam} e a outra metade classificada como \textit{não spam}.
@@ -131,7 +131,7 @@ F-Medida   & 79.039655  & \textbf{90.486672}  & 79.325956\\
 \end{small}
 \end{table} 
 
-De acordo com a tabela \ref{table:table_comparacao}, o método que teve um resultado melhor foi a \textit{Regressão Logística}, obtendo 90\% de acurácia. O desempenho computacional dos métodos \textit{Naive Bayes} e \textit{Regressão Logística} foram equivalentes, levando menos de um minuto para computar os resultados. Já o método de \textit{Redes Neurais (MLP)} teve um desempenho computacional maior, devido a sua otimização.
+De acordo com a tabela \ref{table:table_comparacao}, o método que teve um resultado melhor foi a \textit{Regressão Logística}, obtendo 90\% de acurácia. O desempenho computacional dos métodos \textit{Redes Neurais (MLP)}  e \textit{Regressão Logística} foram equivalentes, levando menos de um minuto para computar os resultados. Já o método \textit{Naive Bayes} teve um desempenho computacional maior, devido a sua discretização nas cestas.
 
 Em termos gerais, os algoritmos obtiveram um bom resultado, ficando a acurácia de todos acima ou próximos de 80\% e a menor F-Medida igual a 79\%.
 
