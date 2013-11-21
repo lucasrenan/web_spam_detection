@@ -151,34 +151,34 @@ Nessa sessão apresentamos um descritivo da implementação, para que os testes 
 
 \subsection{Naive Bayes}
 \begin{enumerate}
-\item A base de dados deve estar na mesma pasta dos arquivos de implementação.
-\item Para rodar o método, chame o arquivo "nb.m".
-\item Para dados contínuos, é necessário escalar a base de treinamento chamando "nb\_escalarAtributos", a função irá retornar a base escalada, e o range utilizado. Como parâmetro de "qtdeBags" utilizamos 5.
+\item A base de dados deve estar na raiz da pasta IMPLEMENTACAO.
+\item Para rodar o método, entre na pasta "Naive\_Bayes", chame o arquivo "nb.m".
+\item Para dados contínuos, é necessário escalar a base de treinamento chamando "nb\_escalarAtributos", a função irá retornar a base escalada, e o range utilizado. Como parâmetro de "qtdeBags", utilizamos 5.
 \item Para calcular as probabilidades dos elementos, chame a função "nb\_calcProbabilidade", onde deve ser passado como uma matriz os elementos únicos da matriz escalada como parâmetro.
 \item Para classificar uma nova amostra que não estava na base de treino, é necessário chamar novamente a "nb\_escalarAtributos", informando o range retornado no passo anterior.
-\item Chame então a função "nb\_classificarAtributos" que retornará a classificação da nova amostra.
+\item Chame então a função "nb\_classificarAtributos", que retornará a classificação da nova amostra.
 \end{enumerate}
 
 \subsection{Regressão Logística}
 \begin{enumerate}
-\item A base de dados deve estar na mesma pasta dos arquivos de implementação.
-\item Para rodar o método, chame o arquivo "rl.m".
+\item A base de dados deve estar na raiz da pasta IMPLEMENTACAO.
+\item Para rodar o método, entre na pasta "Regressao\_Logistica", e chame o arquivo "rl.m".
 \item Para melhor desempenho computacional usamos a função "reduzirAtributos", que reduz para $k$ amostras, de maneira que a variância seja de 99\%.
 \item Setar o \textit{theta} inicial com uns.
-\item Chamar a função "fminunc" passando a "rl\_funcaoCusto".
-\item Com o \textit{theta} ótimo calculado, chamar a "rl\_predicao" para a nova amostra de dados..
+\item Chamar a função "fminunc", passando função "rl\_funcaoCusto".
+\item Com o \textit{theta} ótimo calculado, chamar a "rl\_predicao", que irá classificar a nova amostra de dados..
 \end{enumerate}
 
 \subsection{Redes Neurais Articiais - MultiLayer Perceptron}
 \begin{enumerate}
-\item A base de dados deve estar na mesma pasta dos arquivos de implementação.
-\item Para rodar o método, chame o arquivo "rn\_mlp.m".
+\item A base de dados deve estar na raiz da pasta IMPLEMENTACAO.
+\item Para rodar o método, entre na pasta "RN\_MLP", e chame o arquivo "rn\_mlp.m".
 \item Defina o item "tam\_cam\_inter", essa variável determina a quantidade de neurônios na camada intermediária. Em nossos testes utilizamos 20.
 \item Para melhor acurácia, chamamos o "normalizarAtributos".
 \item Para o resultado acima informado, carregamos o \textit{theta} pré-definido no arquivo "theta\_ini". Caso deseje um outro valor de \textit{theta} inicial, deve-se descomentar as linhas que geram os \textit{thetas} aleatórios.
-\item Chamar a função "fminunc" passando a "rn\_JDeltha".
-\item Com o \textit{theta} ótimo calculado, utilizar a função "reshape" para separar o \textit{theta1} e \textit{theta2}.
-\item Chamar a "rn\_predicao" para a nova amostra de dados, passando os \textit{thetas} do item anterior.
+\item Chamar a função "fminunc",  passando a função "rn\_JDeltha".
+\item Com o \textit{theta} ótimo calculado, utilizar a função "reshape", que deve separar o \textit{theta1} e \textit{theta2}.
+\item Chamar a "rn\_predicao", que irá classificar a nova amostra de dados. Deve-se passar como parâmetro os \textit{thetas} do item anterior.
 \end{enumerate}
 
 \end{document}
